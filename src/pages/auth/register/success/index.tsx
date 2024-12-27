@@ -1,10 +1,12 @@
 import AuthLayout from "@/components/layouts/authLayout";
 import Register from "@/components/views/Register";
+import RegisterSuccess from "@/components/views/RegisterSuccess";
 
+// Register Success Page
 const RegisterSuccessPage = () => {
   return (
     <AuthLayout title="Acara | Register Success">
-      <h1>Register Success</h1>
+      <RegisterSuccess />
     </AuthLayout>
   )
 }
