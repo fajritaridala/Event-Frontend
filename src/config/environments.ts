@@ -1,6 +1,6 @@
 // Usage: import environment from 'src/config/environments';
-const environmet = {
+const environment = {
   API_URL: process.env.NEXT_PUBLIC_API_URL,
 }
 
-export default environmet;
+export default environment;

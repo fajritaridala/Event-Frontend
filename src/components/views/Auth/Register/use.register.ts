@@ -3,7 +3,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IRegister } from "@/types/Auth";
-import authServices from "@/services/auth";
+import authServices from "@/services/auth.service";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 
@@ -54,8 +54,13 @@ const useRegister = () => {
 
   // Register Service to handle register request
   const registerService = async (payload: IRegister) => {
-    const result = await authServices.register(payload);
-    return result;
+    try {
+      const result = await authServices.register(payload);
+      return result;
+    } catch (error) {
+      console.log("Error Register", error);
+      throw error;
+    }
   };
 
   // Register Mutation to handle register service
