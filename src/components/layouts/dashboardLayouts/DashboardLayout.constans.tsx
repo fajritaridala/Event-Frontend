@@ -39,12 +39,6 @@ const SIDEBAR_ADMIN = [
     href: "/admin/transaction",
     icon: <CiWallet />,
   },
-  {
-    key: "setting",
-    label: "Setting",
-    href: "/admin/setting",
-    icon: <CiSettings />,
-  },
 ];
 
 // items sidebar for member dashboard
