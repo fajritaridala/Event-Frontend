@@ -21,7 +21,12 @@ const DashboardLayoutSidebar = (props: PropTypes) => {
   const { sidebarItems, isOpen } = props; // takes sidebar items and isOpen from props
   const router = useRouter(); // router hook
   return (
-    <div className="relative z-50 flex h-screen w-full max-w-[300px] flex-col justify-between border-r-1 border-default-200 bg-white px-4 py-6 transition-all">
+    <div
+      className={cn(
+        "fixed z-50 flex h-screen w-full max-w-[300px] -translate-x-full flex-col justify-between border-r-1 border-default-200 bg-white px-4 py-6 transition-all lg:relative lg:translate-x-0",
+        { "translate-x-0": isOpen },
+      )}
+    >
       <div>
         <div className="flex w-full justify-center">
           <Image
