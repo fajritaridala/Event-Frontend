@@ -4,7 +4,7 @@ import Dashboard from "@/components/views/Member/Dashboard";
 // Register Page
 const DashboardMemberPage = () => {
   return (
-    <DashboardLayout title="Acara | Member">
+    <DashboardLayout title="Acara | Member" type="member">
       <Dashboard />
     </DashboardLayout>
   );
