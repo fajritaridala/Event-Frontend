@@ -1,4 +1,3 @@
-import exp from "constants";
 import Head from "next/head";
 
 interface PropTypes {

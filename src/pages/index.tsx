@@ -1,7 +1,6 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import { Button } from "@nextui-org/react";
-import PageHead from "@/components/commons/pageHead";
+import PageHead from "@/components/common/pageHead";
 import { useRouter } from "next/router";
 
 // Load Inter font

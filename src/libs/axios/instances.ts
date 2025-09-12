@@ -10,7 +10,7 @@ const headers = {
 
 // make a req to the API
 const instance = axios.create({
-  baseURL: environment.API_URL,
+  baseURL: environment.API_URL_DEV,
   headers,
   timeout: 60 * 1000, // 60s
 });
