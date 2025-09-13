@@ -1,5 +1,5 @@
-import PageHead from "@/components/commons/pageHead";
-import { Fragment, ReactNode } from "react";
+import PageHead from "@/components/common/pageHead";
+import { ReactNode } from "react";
 
 // Prop types
 interface PropType {

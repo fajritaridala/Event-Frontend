@@ -1,4 +1,4 @@
-import PageHead from "@/components/commons/pageHead";
+import PageHead from "@/components/common/pageHead";
 import { ReactNode, useState } from "react";
 import DashboardLayoutSidebar from "./dashboardLayoutSidebar";
 import { SIDEBAR_ADMIN, SIDEBAR_MEMBER } from "./DashboardLayout.constans";

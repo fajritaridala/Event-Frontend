@@ -71,8 +71,8 @@ const useRegister = () => {
         message: error.message,
       });
     },
-    onSuccess: () => {
-      router.push("/auth/register/success");
+    onSuccess: async () => {
+      await router.push("/auth/register/success");
       reset();
     },
   });

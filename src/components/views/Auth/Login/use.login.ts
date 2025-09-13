@@ -14,7 +14,7 @@ const loginSchema = yup.object().shape({
 });
 
 // Custom Hook
-  const useLogin = () => {
+const useLogin = () => {
   const router = useRouter();
   const [isVisible, setIsVisible] = useState(false); // Password visibility
   const toggleVisibility = () => setIsVisible(!isVisible); // Toggle password visibility
@@ -52,8 +52,8 @@ const loginSchema = yup.object().shape({
         message: error.message,
       });
     },
-    onSuccess: () => {
-      router.push(callbackUrl); // redirect to the callbackUrl after login
+    onSuccess: async () => {
+      await router.push(callbackUrl); // redirect to the callbackUrl after login
       reset();
     },
   });
