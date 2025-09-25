@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -6,6 +6,7 @@ import { ILogin } from "@/types/Auth";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import { signIn } from "next-auth/react";
+import { ToasterContext } from "@/contexts/ToasterContext";
 
 // Validation Schema
 const loginSchema = yup.object().shape({
@@ -16,6 +17,7 @@ const loginSchema = yup.object().shape({
 // Custom Hook
 const useLogin = () => {
   const router = useRouter();
+  const { setToaster } = useContext(ToasterContext);
   const [isVisible, setIsVisible] = useState(false); // Password visibility
   const toggleVisibility = () => setIsVisible(!isVisible); // Toggle password visibility
 
@@ -47,14 +49,19 @@ const useLogin = () => {
   // Mutation Hook
   const { mutate: mutateLogin, isPending: isPendingLogin } = useMutation({
     mutationFn: loginService, // login service
-    onError(error) {
-      setError("root", {
-        message: error.message,
+    onError: () => {
+      setToaster({
+        type: "error",
+        message: "Your credentials is wrong",
       });
     },
     onSuccess: async () => {
-      await router.push(callbackUrl); // redirect to the callbackUrl after login
       reset();
+      setToaster({
+        type: "success",
+        message: "Login successful",
+      });
+      await router.push(callbackUrl); // redirect to the callbackUrl after login
     },
   });
 
