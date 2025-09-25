@@ -11,9 +11,8 @@ import { useRouter } from "next/router";
 import { Key, ReactNode, useCallback, useEffect } from "react";
 import { CiMenuKebab } from "react-icons/ci";
 import { COLUMN_LISTS_CATEGORY } from "./Category.constants";
-import { LIMIT_LISTS } from "@/constants/list.contants";
 import useCategory from "./useCategory";
-import { data } from "framer-motion/client";
+import InputFile from "@/components/ui/InputFile";
 
 const Category = () => {
   const router = useRouter();
@@ -94,6 +93,7 @@ const Category = () => {
           totalPages={dataCategory?.pagination.totalPages}
         />
       )}
+      <InputFile name="dropzone" isDropable />
     </section>
   );
 };
