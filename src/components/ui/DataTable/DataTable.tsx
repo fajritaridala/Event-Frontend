@@ -1,5 +1,5 @@
-import { LIMIT_LISTS } from "@/constants/list.contants";
-import { cn } from "@/utils/class.name";
+import { ChangeEvent, Key, ReactNode, useMemo } from "react";
+import { CiSearch } from "react-icons/ci";
 import {
   Button,
   Input,
@@ -14,8 +14,8 @@ import {
   TableHeader,
   TableRow,
 } from "@nextui-org/react";
-import { ChangeEvent, Key, ReactNode, useMemo } from "react";
-import { CiSearch } from "react-icons/ci";
+import { LIMIT_LISTS } from "@/constants/list.contants";
+import { cn } from "@/utils/class.name";
 
 interface PropTypes {
   buttonTopContentLabel?: string;
@@ -57,6 +57,7 @@ const DataTable = (props: PropTypes) => {
       <div className="flex flex-col-reverse items-start justify-between gap-y-4 lg:flex-row lg:items-center">
         <Input
           isClearable
+          aria-labelledby="search-input"
           className="w-full sm:max-w-[24%]"
           placeholder="Search..."
           startContent={<CiSearch />}

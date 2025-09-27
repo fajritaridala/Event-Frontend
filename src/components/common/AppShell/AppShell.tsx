@@ -1,9 +1,8 @@
-import Toaster from "@/components/ui/Toaster";
-import { defaultToaster, ToasterContext } from "@/contexts/ToasterContext";
-import { cn } from "@/utils/class.name";
-import { time } from "framer-motion/m";
-import { Inter } from "next/font/google";
 import { ReactNode, useContext, useEffect } from "react";
+import { Inter } from "next/font/google";
+import Toaster from "@/components/ui/Toaster";
+import { ToasterContext, defaultToaster } from "@/contexts/ToasterContext";
+import { cn } from "@/utils/class.name";
 
 // Load Inter font
 const inter = Inter({
